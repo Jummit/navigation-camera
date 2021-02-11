@@ -5,8 +5,8 @@ extends Camera
 A camera that can be rotated and panned around a center using the mouse
 """
 
-export(float, 0.0, 0.1) var rotation_sensitity := 0.01
-export(float, 0.0, 1.0) var moving_sensitity := 0.2
+export(float, 0.0, 1.0) var rotation_sensitity := 0.48
+export(float, 0.0, 1.0) var moving_sensitity := 0.14
 export(float, 0.0, 1.0) var zoom_sensitity := 0.3
 export var pan_only := false
 
@@ -33,8 +33,8 @@ func _input(event : InputEvent) -> void:
 			focus_point -= transform.basis.x * event.relative.x * moving_sensitity / 100 * -zoom
 			focus_point += transform.basis.y * event.relative.y * moving_sensitity / 100  * -zoom
 		else:
-			vertical_rotation -= event.relative.x * rotation_sensitity
-			horizontal_rotation -= event.relative.y * rotation_sensitity
+			vertical_rotation -= event.relative.x * rotation_sensitity / 100
+			horizontal_rotation -= event.relative.y * rotation_sensitity / 100
 		transform = _generate_transform(horizontal_rotation,
 				vertical_rotation, zoom, focus_point)
 
