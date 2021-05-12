@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/navigation_camera_icon.svg-57ba215ada91b2ea22ffaca147796023.stex"
+path="res://.import/navigation_camera_icon.svg-2318a3408c0508a75d2a863760d05281.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://addons/navigation_camera/navigation_camera_icon.svg"
-dest_files=[ "res://.import/navigation_camera_icon.svg-57ba215ada91b2ea22ffaca147796023.stex" ]
+source_file="res://addons/third_party/navigation_camera/navigation_camera_icon.svg"
+dest_files=[ "res://.import/navigation_camera_icon.svg-2318a3408c0508a75d2a863760d05281.stex" ]
 
 [params]
 

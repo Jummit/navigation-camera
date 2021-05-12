@@ -1,5 +1,6 @@
 tool
 extends Camera
+class_name NavigationCamer, "navigation_camera_icon.svg"
 
 """
 A camera that can be rotated and panned around a center using the mouse
