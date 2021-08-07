@@ -27,8 +27,7 @@ func _input(event : InputEvent) -> void:
 			zoom += zoom_sensitity
 		elif event.button_index == BUTTON_WHEEL_DOWN:
 			zoom -= zoom_sensitity
-		transform = _generate_transform(horizontal_rotation,
-				vertical_rotation, zoom, focus_point)
+		update_transform()
 	if event is InputEventMouseMotion and event.button_mask == BUTTON_MASK_MIDDLE:
 		if event.shift or pan_only:
 			focus_point -= transform.basis.x * event.relative.x * moving_sensitity / 100 * -zoom
@@ -36,8 +35,11 @@ func _input(event : InputEvent) -> void:
 		else:
 			vertical_rotation -= event.relative.x * rotation_sensitity / 100
 			horizontal_rotation -= event.relative.y * rotation_sensitity / 100
-		transform = _generate_transform(horizontal_rotation,
-				vertical_rotation, zoom, focus_point)
+		update_transform()
+
+
+func update_transform() -> void:
+	transform = _generate_transform(horizontal_rotation, vertical_rotation, zoom, focus_point)
 
 
 static func _generate_transform(_horizontal_rotation : float,
