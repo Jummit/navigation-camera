@@ -29,7 +29,9 @@ func _input(event : InputEvent) -> void:
 			zoom -= zoom_sensitity
 		update_transform()
 	if event is InputEventMouseMotion and event.button_mask == BUTTON_MASK_MIDDLE:
-		if event.shift or pan_only:
+		if event.control:
+			zoom -= zoom_sensitity * event.relative.y * moving_sensitity
+		elif event.shift or pan_only:
 			focus_point -= transform.basis.x * event.relative.x * moving_sensitity / 100 * -zoom
 			focus_point += transform.basis.y * event.relative.y * moving_sensitity / 100  * -zoom
 		else:
