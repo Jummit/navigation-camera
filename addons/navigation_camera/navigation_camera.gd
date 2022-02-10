@@ -18,7 +18,9 @@ var vertical_rotation := 0.0
 var zoom := 0.0
 
 func _ready() -> void:
-	zoom = -translation.z
+	vertical_rotation = transform.basis.get_euler().y
+	horizontal_rotation = transform.basis.get_euler().x
+	zoom = -transform.origin.distance_to(focus_point)
 
 
 func _unhandled_input(event : InputEvent) -> void:
