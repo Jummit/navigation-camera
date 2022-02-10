@@ -21,13 +21,13 @@ func _ready() -> void:
 	zoom = -translation.z
 
 
-func _input(event : InputEvent) -> void:
+func _unhandled_input(event : InputEvent) -> void:
 	if event is InputEventMouseButton:
 		if event.button_index == BUTTON_WHEEL_UP:
 			zoom += zoom_sensitity
 		elif event.button_index == BUTTON_WHEEL_DOWN:
 			zoom -= zoom_sensitity
-		update_transform()
+		_update_transform()
 	if event is InputEventMouseMotion and event.button_mask == BUTTON_MASK_MIDDLE:
 		if event.control:
 			zoom -= zoom_sensitity * event.relative.y * moving_sensitity
@@ -37,10 +37,10 @@ func _input(event : InputEvent) -> void:
 		else:
 			vertical_rotation -= event.relative.x * rotation_sensitity / 100
 			horizontal_rotation -= event.relative.y * rotation_sensitity / 100
-		update_transform()
+		_update_transform()
 
 
-func update_transform() -> void:
+func _update_transform() -> void:
 	transform = _generate_transform(horizontal_rotation, vertical_rotation, zoom, focus_point)
 
 
@@ -51,6 +51,6 @@ static func _generate_transform(_horizontal_rotation : float,
 			.translated(Vector3.FORWARD * _zoom)\
 			.rotated(Vector3.RIGHT, _horizontal_rotation)\
 			.rotated(Vector3.UP, _vertical_rotation)\
-	# don't use translated because it is local
+	# Don't use `translated` because it is in local space.
 	transform.origin += _focus_point
 	return transform
