@@ -1,0 +1,34 @@
+[gd_scene load_steps=6 format=3 uid="uid://bme7pkf8lran0"]
+
+[ext_resource type="Script" path="res://addons/navigation_camera/navigation_camera.gd" id="1_k2p3g"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_jnmy1"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_442fy"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_xmgeb"]
+sky_material = SubResource("ProceduralSkyMaterial_442fy")
+
+[sub_resource type="Environment" id="Environment_2pl56"]
+background_mode = 2
+sky = SubResource("Sky_xmgeb")
+tonemap_mode = 2
+glow_enabled = true
+
+[node name="Main" type="Node3D"]
+
+[node name="MeshInstance3d" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_jnmy1")
+
+[node name="NavigationCamera" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4.21776)
+script = ExtResource("1_k2p3g")
+
+[node name="DirectionalLight3d" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866026, -0.5, 0.75, -0.433013, 0, 4.73068, 0)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_2pl56")

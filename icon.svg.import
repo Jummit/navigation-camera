@@ -2,19 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cl5t8ur7jjfc6"
-path="res://.godot/imported/navigation_camera_icon.svg-57ba215ada91b2ea22ffaca147796023.ctex"
+uid="uid://c4g623pnr4ask"
+path="res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex"
 metadata={
-"editor_dark_theme": true,
-"editor_scale": 1.25,
-"has_editor_variant": true,
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://addons/navigation_camera/navigation_camera_icon.svg"
-dest_files=["res://.godot/imported/navigation_camera_icon.svg-57ba215ada91b2ea22ffaca147796023.ctex"]
+source_file="res://icon.svg"
+dest_files=["res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex"]
 
 [params]
 
@@ -36,5 +33,5 @@ process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
 svg/scale=1.0
-editor/scale_with_editor_scale=true
-editor/convert_colors_with_editor_theme=true
+editor/scale_with_editor_scale=false
+editor/convert_colors_with_editor_theme=false
