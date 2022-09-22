@@ -5,7 +5,7 @@ type="CompressedTexture2D"
 uid="uid://cl5t8ur7jjfc6"
 path="res://.godot/imported/navigation_camera_icon.svg-57ba215ada91b2ea22ffaca147796023.ctex"
 metadata={
-"editor_dark_theme": true,
+"editor_dark_theme": false,
 "editor_scale": 1.25,
 "has_editor_variant": true,
 "vram_texture": false
