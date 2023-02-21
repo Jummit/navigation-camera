@@ -7,13 +7,15 @@ class_name NavigationCamera
 
 @export_range(0.0, 1.0) var rotation_sensitity := 0.48
 @export_range(0.0, 1.0) var moving_sensitity := 0.14
-@export_range(0.0, 1.0) var zoom_sensitity := 0.3
+@export_range(0.0, 1.0) var zoom_sensitity := 0.1
 @export var pan_only := false
 @export var focus_point := Vector3.ZERO
 
 var horizontal_rotation := 0.0
 var vertical_rotation := 0.0
-var zoom := 0.0
+var zoom := 0.0:
+	set(to):
+		zoom = min(0.01, to)
 
 var _previous_transform : Transform3D
 
@@ -33,13 +35,14 @@ func _unhandled_input(event : InputEvent) -> void:
 		_sync_transform()
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_WHEEL_UP:
-			zoom += zoom_sensitity
+			zoom += zoom_sensitity * (-zoom - 0.5)
 		elif event.button_index == MOUSE_BUTTON_WHEEL_DOWN:
-			zoom -= zoom_sensitity
+			zoom -= zoom_sensitity * (-zoom - 0.5)
 		_update_transform()
 	if event is InputEventMouseMotion and event.button_mask == MOUSE_BUTTON_MASK_MIDDLE:
 		if event.ctrl_pressed:
-			zoom -= zoom_sensitity * event.relative.y * moving_sensitity
+			print(zoom)
+			zoom -= zoom_sensitity * event.relative.y * moving_sensitity * (-zoom - 0.5)
 		elif event.shift_pressed or pan_only:
 			focus_point -= transform.basis.x * event.relative.x * moving_sensitity / 100 * -zoom
 			focus_point += transform.basis.y * event.relative.y * moving_sensitity / 100  * -zoom
