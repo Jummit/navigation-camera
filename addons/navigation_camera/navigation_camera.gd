@@ -1,7 +1,7 @@
 @tool
+@icon("res://addons/navigation_camera/navigation_camera_icon.svg")
 extends Camera3D
 class_name NavigationCamera
-@icon("res://addons/navigation_camera/navigation_camera_icon.svg")
 
 ## A camera that can be rotated and panned around a center using the mouse
 
