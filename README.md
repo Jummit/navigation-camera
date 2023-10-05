@@ -7,3 +7,5 @@ The camera can be rotated around a point using middle click, moved with shift mi
 ## License
 
 The code is licensed under GPL 3.0 or later. Assets and non-code files are licensed under CC0 1.0.
+
+This project is [REUSE](https://reuse.software) compliant.
