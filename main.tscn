@@ -19,16 +19,15 @@ glow_enabled = true
 
 [node name="Main" type="Node3D"]
 
-[node name="MeshInstance3d" type="MeshInstance3D" parent="."]
+[node name="MeshInstance" type="MeshInstance3D" parent="."]
 mesh = SubResource("BoxMesh_jnmy1")
 
 [node name="NavigationCamera" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4.21776)
 script = ExtResource("1_k2p3g")
 
-[node name="DirectionalLight3d" type="DirectionalLight3D" parent="."]
+[node name="DirectionalLight" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866026, -0.5, 0.75, -0.433013, 0, 4.73068, 0)
-shadow_enabled = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_2pl56")

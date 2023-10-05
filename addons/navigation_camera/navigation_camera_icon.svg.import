@@ -5,8 +5,6 @@ type="CompressedTexture2D"
 uid="uid://cl5t8ur7jjfc6"
 path="res://.godot/imported/navigation_camera_icon.svg-57ba215ada91b2ea22ffaca147796023.ctex"
 metadata={
-"editor_dark_theme": false,
-"editor_scale": 1.25,
 "has_editor_variant": true,
 "vram_texture": false
 }
@@ -19,9 +17,9 @@ dest_files=["res://.godot/imported/navigation_camera_icon.svg-57ba215ada91b2ea22
 [params]
 
 compress/mode=0
+compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
-compress/bptc_ldr=0
 compress/normal_map=0
 compress/channel_pack=0
 mipmaps/generate=false
